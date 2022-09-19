@@ -12,9 +12,24 @@ class IPCalculator:
     def __init__(self, network):
         self.network = ipaddress.IPv4Network(network)
 
+    @property
+    def broadcast_address(self):
+        if self.network: 
+            return self.network.broadcast_address
+
+    @property
+    def network_address(self):
+        if self.network:
+            return self.network.network_address
+
+    @property
+    def netmask(self):
+        if self.network:
+            return self.network.netmask
+
     def get_network(self):
-        """ Returns the network. """
-        
+        """ Returns the network """
+
         return str(self.network)
 
     def get_first_ip(self):
@@ -29,21 +44,6 @@ class IPCalculator:
         last_ip = list(self.network.hosts())[-1]
         return str(last_ip)
  
-    def get_broadcast_address(self):
-        """ Calculates the broadcast address. """
-        
-        return self.network.broadcast_address
-
-    def get_network_address(self):
-        """ Calculates the last address. """
-        
-        return self.network.network_address
-
-    def get_netmask(self):
-        """ Calculate the netmask. """
-
-        return self.network.netmask
-
     def calculate(self):
         """ Prints the calculation results. """
 
