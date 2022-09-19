@@ -1,11 +1,11 @@
 import ipaddress
-import argparse
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-n', '--network', help="The network in the format x.x.x.x/x.")
     args = parser.parse_args()
     return args.network
+
 
 class IPCalculator:
 
@@ -14,7 +14,7 @@ class IPCalculator:
 
     def get_network(self):
         """ Returns the network. """
-        
+
         return str(self.network)
 
     def get_first_ip(self):
@@ -28,15 +28,15 @@ class IPCalculator:
 
         last_ip = list(self.network.hosts())[-1]
         return str(last_ip)
- 
+
     def get_broadcast_address(self):
         """ Calculates the broadcast address. """
-        
+
         return self.network.broadcast_address
 
     def get_network_address(self):
         """ Calculates the last address. """
-        
+
         return self.network.network_address
 
     def get_netmask(self):
