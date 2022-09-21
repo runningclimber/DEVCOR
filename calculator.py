@@ -16,7 +16,7 @@ class IPCalculator:
         return str(self.network)
 
     def get_first_ip(self):
-        nework_address = self.get_network_address()
+        network_address = self.get_network_address()
         first_ip = network_address + 1
         return str(first_ip)
 
