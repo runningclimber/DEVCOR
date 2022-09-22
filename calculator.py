@@ -45,9 +45,9 @@ class IPCalculator:
 
         print('The results of the calculation is:')
         print(f'-> Input network:\t\t{self.get_network()}')
-#        print(f'-> Network address:\t\t{self.get_network_address()}')
-#        print(f'-> Netmask:\t\t\t{self.get_netmask()}')
-#        print(f'-> Broadcast address:\t\t{self.get_broadcast_address()}')
+        print(f'-> Network address:\t\t{self.network_address}')
+        print(f'-> Netmask:\t\t\t{self.netmask}')
+        print(f'-> Broadcast address:\t\t{self.broadcast_address}')
         print(f'-> First IP address:\t\t{self.get_first_ip()}')
         print(f'-> Last IP address:\t\t{self.get_last_ip()}')
 
